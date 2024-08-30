@@ -16,4 +16,3 @@ require 'base'
 require 'neovide'
 require 'keymap'
 require('lazy').setup 'plugins'
-

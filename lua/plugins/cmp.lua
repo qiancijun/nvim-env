@@ -10,6 +10,7 @@ return {
     'onsails/lspkind.nvim',
     'petertriho/cmp-git',
   },
+
   config = function()
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'
@@ -19,37 +20,31 @@ return {
       completion = {
         completeopt = 'menu, menuone, preview, noselect',
         keyword_length = 1, -- 触发补全时用户需要输入的最小字符数
-        completeitems = { 'buffer', 'snippet', 'lsp' }, -- 指定在补全菜单中显示哪些补全类型
-        sort = true, -- 启用补全排序
+        completeitems = { 'buffer', 'snippet', 'lsp', 'path' }, -- 指定在补全菜单中显示哪些补全类型
       },
-      formatting = {
-        format = lspkind.cmp_format {
-          maxwidth = 50,
-          ellipsis_char = '...',
-        },
-      },
+      -- formatting = {
+      --   format = lspkind.cmp_format {
+      --     maxwidth = 50,
+      --     ellipsis_char = '...',
+      --   },
+      -- },
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)
         end,
       },
       mapping = cmp.mapping.preset.insert {
-        ['<Tab>'] = cmp.mapping.select_next_item {
-          behavior = cmp.SelectBehavior.Insert,
-        },
-        ['<S-Tab>'] = cmp.mapping.select_prev_item {
-          behavior = cmp.SelectBehavior.Insert,
-        },
+        ['<Tab>'] = cmp.mapping.select_next_item(),
+        ['<S-Tab>'] = cmp.mapping.select_prev_item(),
         ['<C-b>'] = cmp.mapping.scroll_docs(-4), -- 向上滚动文档
         ['<C-f>'] = cmp.mapping.scroll_docs(4), -- 向下滚动文档
-        ['<C-Space>'] = cmp.mapping.complete(), -- 手动触发补全
+        ['<C-l>'] = cmp.mapping.complete(), -- 手动触发补全
         ['<C-e>'] = cmp.mapping.abort(), -- 取消补全
         ['<CR>'] = cmp.mapping.confirm { select = true }, -- 确认补全项
       },
       sources = cmp.config.sources({
+        { name = 'luasnip' },
         { name = 'nvim_lsp' },
-        { name = 'luansip' },
-        { name = 'crates' },
       }, {
         { name = 'buffer' },
       }),
@@ -79,10 +74,11 @@ return {
     --   }),
     -- })
 
-    -- snippets
-    require('luasnip.loaders.from_vscode').load {
-      paths = { '~/.config/nvim/snippets' },
+    -- Load snippets from JSON files (VSCode syntax)
+    require('luasnip.loaders.from_vscode').lazy_load {
+      paths = {
+        vim.fn.stdpath 'config' .. '/snippets/',
+      },
     }
   end,
 }
-

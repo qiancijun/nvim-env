@@ -14,8 +14,8 @@ return {
         },
       },
     }
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+    -- local capabilities = vim.lsp.protocol.make_client_capabilities()
+    -- capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
     require('mason-lspconfig').setup {}
     require('mason-tool-installer').setup {
@@ -25,16 +25,11 @@ return {
         'eslint_d',
         'prettierd',
         'rust-analyzer',
-        'prisma-language-server',
         'gopls',
         'tailwindcss',
         'pylsp',
         'pyright',
       },
-      require('lspconfig').pyright.setup {
-        capabilities = capabilities,
-      },
     }
   end,
 }
-

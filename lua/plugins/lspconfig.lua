@@ -14,14 +14,8 @@ return {
       },
     }
 
-    -- -- go
-    -- lspconfig.gopls.setup {}
-    -- -- python
-    -- lspconfig.pyright.setup {}
-    -- -- tailwindcss
-    lspconfig.tailwindcss.setup {}
-
-    lspconfig.rust.setup {}
+    -- python
+    lspconfig.pyright.setup {}
 
     -- gopls
     local on_attach = function(client, bufnr)
