@@ -7,6 +7,16 @@ return {
       formatters_by_ft = {
         lua = { 'stylua' },
         go = { 'gopls' },
+        javascript = { 'prettierd' },
+        typescript = { 'prettierd' },
+        typescriptreact = { 'prettierd' },
+        javascriptreact = { 'prettierd' },
+        css = { 'prettierd' },
+        html = { 'prettierd' },
+        json = { 'prettierd' },
+        yaml = { 'prettierd' },
+        markdown = { 'prettierd' },
+        scss = { 'prettierd' },
       },
       format_on_save = {
         timeout_ms = 500,
@@ -15,4 +25,3 @@ return {
     }
   end,
 }
-
