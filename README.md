@@ -1,6 +1,7 @@
 # Neovim
 
 version: v0.10.1
+
 plugin management: Lazyvim
 
 ![](./nvim.gif)
