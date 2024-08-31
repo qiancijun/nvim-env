@@ -49,3 +49,10 @@ git clone https://github.com/qiancijun/nvim-env.git ~/.config/nvim
 - tree
 - treesitter
 - ufo
+
+## Lsp
+
+- lua
+- go
+- typescript
+- tailwindcss
