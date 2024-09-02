@@ -17,6 +17,9 @@ return {
     -- python
     lspconfig.pyright.setup {}
 
+    -- tailwind
+    lspconfig.tailwindcss.setup {}
+
     -- gopls
     local on_attach = function(client, bufnr)
       -- Enable completion triggered by <c-x><c-o>
