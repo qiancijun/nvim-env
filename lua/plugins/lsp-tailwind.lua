@@ -1,26 +1,32 @@
 return {
-  'pmizio/typescript-tools.nvim',
-  dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
-  config = function()
-    local api = require 'typescript-tools.api'
-    require('typescript-tools').setup {
-      handlers = {
-        ['textDocument/publishDiagnostics'] = api.filter_diagnostics { 6133 },
+  {
+    'neovim/nvim-lspconfig',
+    opts = {
+      servers = {
+        tailwindcss = {},
       },
-      settings = {
-        tsserver_file_preferences = {
-          importModuleSpecifierPreference = 'non-relative',
-        },
+    },
+  },
+  {
+    'NvChad/nvim-colorizer.lua',
+    opts = {
+      user_default_options = {
+        tailwind = true,
       },
-    }
-    local autocmd = vim.api.nvim_create_autocmd
-    autocmd('BufWritePre', {
-      pattern = '*.ts,*.tsx,*.jsx,*.js',
-      callback = function(args)
-        vim.cmd 'TSToolsAddMissingImports sync'
-        vim.cmd 'TSToolsOrganizeImports sync'
-        require('conform').format { bufnr = args.buf }
-      end,
-    })
-  end,
+    },
+  },
+  {
+    'hrsh7th/nvim-cmp',
+    dependencies = {
+      { 'roobert/tailwindcss-colorizer-cmp.nvim', config = true },
+    },
+    -- optionally, override the default options:
+    -- opts = function(_, opts)
+    --     local format_kinds = opts.formatting.format
+    --     opts.formatting.format = function(entry, item)
+    --         format_kinds(entry, item)
+    --         return require("tailwindcss-colorizer-cmp").formatter(entry, item)
+    --     end
+    -- end,
+  },
 }
