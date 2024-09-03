@@ -15,6 +15,7 @@ return {
           'vim',
           'typescript',
           'javascript',
+          'tsx',
           'html',
           'css',
           'json',

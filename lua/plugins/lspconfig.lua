@@ -14,11 +14,25 @@ return {
       },
     }
 
+    -- ts
+    lspconfig.tsserver.setup {}
+
     -- python
     lspconfig.pyright.setup {}
 
     -- tailwind
-    lspconfig.tailwindcss.setup {}
+    lspconfig.tailwindcss.setup {
+      filetypes = {
+        'html',
+        'javascript',
+        'javascriptreact',
+        'typescript',
+        'typescriptreact',
+      },
+    }
+
+    -- eslint
+    lspconfig.eslint.setup {}
 
     -- gopls
     local on_attach = function(client, bufnr)

@@ -1,41 +1,46 @@
 {
-    "React Functional Component": {
-        "prefix": "rfc",
-        "body": [
-            "import React from 'react';",
-            "",
-            "const ${1:ComponentName}: React.FC = () => {",
-            "  return (",
-            "    <div>",
-            "      ${2}",
-            "    </div>",
-            "  );",
-            "};",
-            "",
-            "export default ${1:ComponentName};"
-        ],
-        "description": "Create a React functional component"
-    },
-    "Arrow Function Component": {
-        "prefix": "afc",
-        "body": [
-            "const ${1:ComponentName} = (): JSX.Element => {",
-            "  return (",
-            "    <div>",
-            "      ${2}",
-            "    </div>",
-            "  );",
-            "};",
-            "",
-            "export default ${1:ComponentName};"
-        ],
-        "description": "Create an arrow function component"
-    },
-    "Lorem": {
-        "prefix": "lorem",
-        "body": [
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-        ],
-        "description": "lorem"
-    }
+  "React Functional Component": {
+    "prefix": "rfc",
+    "body": [
+      "import React from 'react';",
+      "",
+      "const ${1:ComponentName}: React.FC = () => {",
+      "  return (",
+      "    <div>",
+      "      ${2}",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+      "export default ${1:ComponentName};"
+    ],
+    "description": "Create a React functional component"
+  },
+  "Arrow Function Component": {
+    "prefix": "afc",
+    "body": [
+      "const ${1:ComponentName} = (): JSX.Element => {",
+      "  return (",
+      "    <div>",
+      "      ${2}",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+      "export default ${1:ComponentName};"
+    ],
+    "description": "Create an arrow function component"
+  },
+  "Lorem": {
+    "prefix": "lorem",
+    "body": [
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    ],
+    "description": "lorem"
+  },
+  "Div with className": {
+    "prefix": "divc",
+    "body": ["<div className=''>${1}</div>"],
+    "description": "Create div tag with className"
+  }
 }
