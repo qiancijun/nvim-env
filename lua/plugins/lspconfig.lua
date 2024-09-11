@@ -18,7 +18,7 @@ return {
     lspconfig.tsserver.setup {}
 
     -- python
-    lspconfig.pyright.setup {}
+    lspconfig.pylsp.setup {}
 
     -- tailwind
     lspconfig.tailwindcss.setup {
@@ -33,6 +33,9 @@ return {
 
     -- eslint
     lspconfig.eslint.setup {}
+
+    -- rust
+    lspconfig.rust_analyzer.setup {}
 
     -- gopls
     local on_attach = function(client, bufnr)

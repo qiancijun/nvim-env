@@ -8,6 +8,7 @@ return {
       'axelvc/template-string.nvim',
     },
     config = function()
+      require('nvim-ts-autotag').setup {}
       require('nvim-treesitter.configs').setup {
         ensure_installed = {
           'tsx',
@@ -25,6 +26,7 @@ return {
           'prisma',
           'markdown',
           'markdown_inline',
+          'python',
         },
 
         sync_install = false,
@@ -36,9 +38,6 @@ return {
           enable = true,
 
           additional_vim_regex_highlighting = false,
-        },
-        autotag = {
-          enable = true,
         },
         incremental_selection = {
           enable = true,
