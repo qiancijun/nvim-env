@@ -30,7 +30,20 @@ return {
         sections = {
           lualine_a = { 'mode' },
           lualine_b = { 'branch', 'diff', 'diagnostics' },
-          lualine_c = { 'filename' },
+          lualine_c = {
+            'filename',
+            {
+              function()
+                local conda_env = os.getenv 'CONDA_DEFAULT_ENV'
+                if conda_env then
+                  return 'Conda: ' .. conda_env
+                else
+                  return ''
+                end
+              end,
+              icon = '', -- 你可以根据需求选择不同的图标
+            },
+          },
           lualine_x = {
             {
               'diagnostics',
