@@ -9,12 +9,12 @@ return {
         -- 配置诊断显示的虚拟文本（显示在代码行上）
         virtual_text = {
           -- 是否启用虚拟文本显示
-          enable = true,
+          enable = false,
           -- 虚拟文本的格式
           format = function(diagnostic)
             local message = diagnostic.message
             -- 如果消息长度超过一定值，则进行换行
-            local max_width = 80
+            local max_width = 40
             if #message > max_width then
               message = message:sub(1, max_width)
                 .. '\n'

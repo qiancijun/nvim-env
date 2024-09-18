@@ -15,7 +15,8 @@ return {
     }
 
     -- ts
-    lspconfig.tsserver.setup {}
+    -- lspconfig.tsserver.setup {}
+    lspconfig.ts_ls.setup {}
 
     -- python
     lspconfig.pylsp.setup {}
@@ -36,6 +37,9 @@ return {
 
     -- rust
     lspconfig.rust_analyzer.setup {}
+
+    -- markdown
+    lspconfig.marksman.setup {}
 
     -- gopls
     local on_attach = function(client, bufnr)
