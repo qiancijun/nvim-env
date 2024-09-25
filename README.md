@@ -56,3 +56,21 @@ git clone https://github.com/qiancijun/nvim-env.git ~/.config/nvim
 - go
 - typescript
 - tailwindcss
+
+# Other Plugins
+
+## ripgrep
+
+[github page](https://github.com/BurntSushi/ripgrep)
+
+Mac install:
+
+```shell
+brew install ripgrep
+```
+
+Ubuntu install:
+
+```shell
+apt-get install ripgrep
+```
