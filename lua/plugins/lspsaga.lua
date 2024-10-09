@@ -5,6 +5,12 @@ return {
     require('lspsaga').setup {
       ui = {
         border = 'rounded',
+        diagnostic = {
+          error = '#FF0000',
+          warn = '#FFA500',
+          hint = '#00FF00',
+          info = '#0000FF',
+        },
       },
       lightbulb = {
         enable = false,
